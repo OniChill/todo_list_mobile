@@ -1,19 +1,18 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setUsername } from '@/redux/slice/loginSlice';
 import router from 'next/router';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Image from 'next/image';
 import { LoginInterface } from '@/Interface/login';
+import { setUsername } from '../redux/slice/loginSlice';
 
 const Login: React.FC = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const initialValues: LoginInterface = {
     username: "",
   };
-  
   const LoginFormSchema = Yup.object().shape({
     username: Yup.string().required("Username is required").test("username", "Username must be at least 8 characters", (value) => {
       return value?.length >= 8;
@@ -21,7 +20,7 @@ const Login: React.FC = () => {
   });
   
   const handleNameSubmit = (values: LoginInterface) => {
-    // dispatch(setUsername(values.username));
+    dispatch(setUsername(values.username));
     // router.push({
     //   pathname: `/todos`
     // });
