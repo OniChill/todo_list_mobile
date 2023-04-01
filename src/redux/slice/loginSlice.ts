@@ -20,5 +20,6 @@ export const loginSlice = createSlice({
       
 export const { setUsername} = loginSlice.actions;
       
+export const getUsername = (state: {login: {username: string}}) => state.login.username;
 
 export default loginSlice.reducer;

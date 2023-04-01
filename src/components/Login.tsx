@@ -21,10 +21,10 @@ const Login: React.FC = () => {
   
   const handleNameSubmit = (values: LoginInterface) => {
     dispatch(setUsername(values.username));
-    // router.push({
-    //   pathname: `/todos`
-    // });
-    console.log(values);
+    router.push({
+      pathname: `/todoList`
+    });
+    
   };
 
   return (

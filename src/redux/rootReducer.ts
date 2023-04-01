@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import loginReducer from './slice/loginSlice';
-import usersReducer from './slice/usersSlice';
+import usersReducer from './slice/usersTodoListSlice';
 
 const rootReducer = combineReducers({
   login: loginReducer,
-  users: usersReducer,
+  usersTodoList: usersReducer,
 });
 
 export default rootReducer;
